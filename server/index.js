@@ -39,7 +39,6 @@ app.post("/uploadFile", upload, (req, res) => {
     var pdfFile = fs.readFileSync("./public/uploads/" + req.file.filename);
     pdfParse(pdfFile).then((data) => {
         res.send(data.text)
-        console.log(req);
     })
 });
 
